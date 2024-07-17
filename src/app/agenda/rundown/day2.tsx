@@ -103,13 +103,6 @@ const AgendaItem: React.FC<AgendaItemProps> = ({ time, agenda, desc }) => {
         <div className={`w-full text-[#FFE5C7] rounded-b-xl sm:rounded-xl xs:flex xs:flex-col relative z-[1] ${state ? 'bg-[#EA5571]' : 'bg-[#CD4258]'}`}>
           <div className="relative w-full p-2 flex xs:flex-row justify-between font-normal items-center select-none">
             <p className="w-max font-bold">{agenda}</p>
-            <img
-              className={
-                "h-[10px] duration-200 flex-shrink-0 " + (state ? "rotate-0" : "rotate-180")
-              }
-              src="/icon-up.png"
-              alt=""
-            />
           </div>
         </div>
         <div
