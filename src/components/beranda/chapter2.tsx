@@ -31,7 +31,14 @@ const CARDCONTENT = [
 const Desktop = () => {
   const [swiper, setSwiper] = useState(null);
   const [activeSwiper, setActiveSwiper] = useState(0);
-  const SwiperCard =({title, desc, link})=>{
+
+  interface SwiperCardProps {
+    title: string;
+    desc: string;
+    link: string;
+  }
+
+  const SwiperCard =({ title, desc, link }: SwiperCardProps)=>{
     return(
       <div className="flex items-center justify-center gap-[2.5vw]">
         <div className="bg-gradient-to-b from-[#FFD23F] to-[#FFA514] w-[21.5vw] h-[15vw] rounded-[2vw]">
