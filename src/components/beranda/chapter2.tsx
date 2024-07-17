@@ -29,7 +29,7 @@ const CARDCONTENT = [
 ]
 
 const Desktop = () => {
-  const [swiper, setSwiper] = useState(null);
+  const [swiper, setSwiper] = useState<SwiperClass | null>(null);
   const [activeSwiper, setActiveSwiper] = useState(0);
 
   interface SwiperCardProps {
@@ -88,9 +88,9 @@ const Desktop = () => {
           <div 
           className="h-full min-w-[3vw] flex items-center justify-center"
           onClick={() => {
-            if (swiper.activeIndex == 0) return;
-            swiper.slidePrev();
-            setActiveSwiper(swiper.activeIndex);
+            if (swiper?.activeIndex === 0) return;
+            swiper?.slidePrev();
+            setActiveSwiper(swiper?.activeIndex ?? 0);
           }}
           >
             <Image 
@@ -123,9 +123,9 @@ const Desktop = () => {
           <div 
           className="h-full min-w-[3vw] flex items-center justify-center"
           onClick={() => {
-            if (swiper.activeIndex == CARDCONTENT.length) return;
-            swiper.slideNext();
-            setActiveSwiper(swiper.activeIndex);
+            if (swiper?.activeIndex === CARDCONTENT.length) return;
+            swiper?.slideNext();
+            setActiveSwiper(swiper?.activeIndex ?? 0);
           }}
           >
             <Image 
@@ -144,7 +144,7 @@ const Desktop = () => {
             key={index}
             onClick={() => {
               setActiveSwiper(index);
-              swiper.slideTo(index);
+              swiper?.slideTo(index);
             }}>
               <div 
               className="w-[70%] h-[0.4vw] bg-[#491772] translate-y-[-1vw] rounded-[0.5vw]"
