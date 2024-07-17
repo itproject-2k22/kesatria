@@ -8,7 +8,13 @@ export default function MateriPage(){
     const [isTitle, setIsTitle] = useState(MODUL[0].title)
     const [isDesc, setIsDesc] = useState(MODUL[0].desc)
     const [isClick, setIsClick] = useState(0)
-    const CardModul = ({item, index}) =>{
+
+    interface Item {
+        title: string;
+        desc: string;
+    }
+
+    const CardModul = ({ item, index }: { item: Item; index: number }) =>{
         const handleClick = () => {
             setIsTitle(item.title)
             setIsDesc(item.desc)
