@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-export default function FAQPage(){
+export default function DesignGuidelinePage(){
     return(
         <main className="min-w-screen min-h-screen flex flex-col">
             <div className="h-[75vw] flex flex-col justify-center place-items-center py-[14.5vw] bg-[url('/images/background/background_design-guideline-1.svg')] bg-cover">
-                <p className="font-legendaire text-[20vw] leading-[20vw] text-center bg-gradient-to-r from-yellow-50 to-yellow-150 bg-clip-text text-transparent drop-shadow-[0_1vw_1vw_#000000]">Design Guidelines</p>
+                <p className="font-legendaire text-[20vw] leading-[20vw] text-center gradient-text-yellow text-shadow">Design Guidelines</p>
                 <p className="text-yellow-50 text-[4vw] font-publica-sans">Pionir Kesatria 2024</p>
             </div> 
             <div className="h-[75vw] bg-[url('/images/background/background_design-guideline-2.svg')] bg-cover grid grid-cols-2 place-items-center">
@@ -21,7 +21,7 @@ export default function FAQPage(){
                     <div className="w-full h-[10vw] col-span-3 bg-[#FFE5C7]"></div>
                 </div>
                 <div className="pr-[10vw]">
-                    <p className="text-[12vw] font-legendaire leading-[12vw] gradient-text-purple drop-shadow-[0_1vw_1vw_#000000]">Colour Pallete</p>
+                    <p className="text-[12vw] font-legendaire leading-[12vw] gradient-text-purple text-shadow">Colour Pallete</p>
                     <p className="text-[2vw] text-purple-50">+ Hitam dan putih di overlay untuk highlight dan shadow</p>
                 </div>
             </div>

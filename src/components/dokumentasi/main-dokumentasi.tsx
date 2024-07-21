@@ -35,38 +35,87 @@ export default function MainDokumentasi() {
 
   return (
     <>
-      <div className="w-full relative h-[90vh] flex flex-col justify-center items-center overflow-x-clip">
-        <p className="text-6xl sm:text-7xl lg:text-8xl font-legendaire gradient-text-yellow z-10">
+      <div className="relative flex h-[90vh] w-full flex-col items-center justify-center overflow-x-clip">
+        <p
+          className="z-[11] font-legendaire text-6xl drop-shadow-[0_1vw_1vw_rgba(0,0,0,1)] gradient-text-yellow-up-down sm:text-7xl lg:text-8xl"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           Dokumentasi
         </p>
-        <div className="z-10">
-          <Parallax translateY={[20, -30]} scale={[1, 1]} easing="easeOutSine">
+        <div className="z-10" data-aos="zoom-in">
+          <Parallax
+            translateY={[10, 10]}
+            translateX={[-10, -10]}
+            scale={[1, 1]}
+            easing="easeOutSine"
+          >
             <Image
-              src="/images/dokumentasi/nala.png"
+              src="/images/logo/nala-kamera.png"
               alt=""
-              width={600}
+              width={500}
               height={600}
-              style={{
-                transform: `translateX(${position.x}px) translateY(${position.y}px)`,
-              }}
-            ></Image>
-          </Parallax>
-        </div>
-        <div className="absolute w-full h-full z-0 hidden lg:flex justify-center items-center drop-shadow-2xl">
-          <Parallax translateY={[0, -20]} scale={[1, 1]} easing="easeOutSine">
-            <Image
-              src="/images/background/element-kain-merah-full.svg"
-              alt=""
-              width={`${position.width}`}
-              height={`${position.height}`}
+              className="w-[70vw] drop-shadow-[0_0.1vw_2vw_rgba(0,0,0,0.6)] sm:max-w-[50vw] lg:max-w-[28vw]"
               // style={{
-              //   transform: `translateX(${position.x / 4}px) translateY(${
-              //     position.y / 4
-              //   }px)`,
-              //   scale: "1.1",
+              //   transform: `translateX(${position.x}px) translateY(${position.y}px)`,
               // }}
             ></Image>
           </Parallax>
+        </div>
+
+        {/* Kain Merah */}
+        <div
+          className="absolute -bottom-[12vw] -right-[30vw] z-0 hidden h-full w-full items-center justify-center drop-shadow-2xl lg:flex"
+          data-aos="zoom-in-left"
+          data-aos-delay="1000"
+        >
+          <Image
+            src="/images/dokumentasi/pita-merah.png"
+            alt=""
+            width={1000}
+            height={100}
+            className="w-full scale-[0.75]"
+          ></Image>
+        </div>
+        <div
+          className="absolute -bottom-[12vw] -left-[30vw] z-0 hidden h-full w-full items-center justify-center drop-shadow-2xl lg:flex"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
+          <Image
+            src="/images/dokumentasi/pita-merah.png"
+            alt=""
+            width={1000}
+            height={100}
+            className="w-full scale-x-[-0.75] scale-y-[0.75]"
+          ></Image>
+        </div>
+        {/* Kain Ungu */}
+        <div
+          className="absolute z-0 hidden h-full w-full items-center justify-center drop-shadow-2xl sm:-bottom-[2vw] sm:-right-[15vw] sm:flex"
+          data-aos="zoom-in-right"
+          data-aos-delay="300"
+        >
+          <Image
+            src="/images/dokumentasi/pita-ungu.png"
+            alt=""
+            width={1000}
+            height={100}
+            className="w-full sm:scale-[0.8] lg:-bottom-[2vw] lg:-right-[15vw] lg:scale-[0.5]"
+          ></Image>
+        </div>
+        <div
+          className="absolute z-0 hidden h-full w-full items-center justify-center drop-shadow-2xl sm:-bottom-[2vw] sm:-left-[15vw] sm:flex"
+          data-aos="zoom-in-left"
+          data-aos-delay="300"
+        >
+          <Image
+            src="/images/dokumentasi/pita-ungu.png"
+            alt=""
+            width={1000}
+            height={100}
+            className="w-full sm:scale-[0.8] sm:scale-x-[-0.8] sm:scale-y-[0.8] lg:-bottom-[2vw] lg:-left-[15vw] lg:scale-[0.5] lg:scale-x-[-0.5]"
+          ></Image>
         </div>
       </div>
     </>

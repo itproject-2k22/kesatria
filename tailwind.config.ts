@@ -8,12 +8,6 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens:{
-      'tablet':'768px',
-      'laptop':'1024px',
-      'md':'768px',
-      'lg': '1024px'
-    },
     container: {
       center: true,
       padding: {
@@ -44,6 +38,12 @@ const config: Config = {
       backgroundImage: {
         "pattern-ungu-kesat":
           "url('/images/background/pattern-ungu-kesat.jpg')",
+        "pattern-krem-kesat":
+          "url('/images/background/pattern-krem-kesat.jpg')",
+        "faq-background": "url('/images/background/faq-base-background.png')",
+        "faq-background-1": "url('/images/background/faq-background-1.png')",
+        "faq-background-2": "url('/images/background/faq-background-2.png')",
+        "faq-background-3": "url('/images/background/faq-background-3.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -64,6 +64,11 @@ const config: Config = {
         },
         ".gradient-text-yellow-up-down": {
           background: "linear-gradient(180deg, #FFD23F, #FFA514)",
+          "-webkit-background-clip": "text",
+          "-webkit-text-fill-color": "transparent",
+        },
+        ".gradient-text-red-up-down": {
+          background: "linear-gradient(180deg, #B22635, #EA5571)",
           "-webkit-background-clip": "text",
           "-webkit-text-fill-color": "transparent",
         },

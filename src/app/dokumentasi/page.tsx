@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import MainDokumentasi from "@/components/dokumentasi/main-dokumentasi";
-
+import Footer from "@/components/layout/footer";
 import { Mobile_A, Mobile_B } from "@/components/dokumentasi/mobile";
 import { Tablet_A, Tablet_B } from "@/components/dokumentasi/tablet";
 import {
@@ -10,6 +10,9 @@ import {
   Desktop_Left,
   Desktop_Center,
 } from "@/components/dokumentasi/desktop";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import image1 from "../../../public/images/dokumentasi/DSC06149.jpg";
 import image2 from "../../../public/images/dokumentasi/DSC07402.jpg";
@@ -23,6 +26,9 @@ import image9 from "../../../public/images/dokumentasi/IMG_4666.jpg";
 import image10 from "../../../public/images/dokumentasi/DSCF5801.jpg";
 import image11 from "../../../public/images/dokumentasi/DSCF6221.jpg";
 import image12 from "../../../public/images/dokumentasi/DSC05282.jpg";
+import image13 from "../../../public/images/dokumentasi/IMG_4706.jpg";
+import image14 from "../../../public/images/dokumentasi/DSCF5435.jpg";
+import image15 from "../../../public/images/dokumentasi/2023_0802_12552600.jpg";
 
 import ImageModal from "@/components/dokumentasi/image-modal";
 
@@ -34,6 +40,7 @@ export default function Dokumentasi() {
     [image4, image5, image6],
     [image7, image8, image9],
     [image10, image11, image12],
+    [image13, image14, image15],
   ];
 
   const imgArrayMobile: any = [
@@ -43,17 +50,23 @@ export default function Dokumentasi() {
     [image7, image8],
     [image9, image10],
     [image11, image12],
+    [image13, image14],
+    [image15],
   ];
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <>
-      <div className="w-full relative bg-pattern-ungu-kesat bg-top bg-repeat pt-32">
+      <div className="relative w-full bg-top bg-repeat pt-32">
         {/* Main Section */}
         <MainDokumentasi />
         {/* Desktop */}
-        <div className="w-full hidden lg:flex flex-col items-center justify-center overflow-x-clip">
+        <div className="hidden w-full flex-col items-center justify-center overflow-x-clip lg:flex">
           {imgArrayDesktop.map((item: any, index: number) => (
-            <div className="w-full flex justify-center flex-wrap" key={index}>
+            <div className="flex w-full flex-wrap justify-center" key={index}>
               <Desktop_Left
                 img={item[0]}
                 setModalIsOpen={setModalIsOpen}
@@ -74,37 +87,41 @@ export default function Dokumentasi() {
         </div>
 
         {/* Tablet */}
-        <div className="w-full hidden sm:flex lg:hidden flex-col items-center justify-center overflow-x-clip">
+        <div className="hidden w-full flex-col items-center justify-center overflow-x-clip sm:flex lg:hidden">
           {imgArrayMobile.map((item: any, index: number) => (
-            <div className="w-full flex justify-center flex-wrap" key={index}>
+            <div className="flex w-full flex-wrap justify-center" key={index}>
               <Tablet_A
                 img={item[0]}
                 setModalIsOpen={setModalIsOpen}
                 setSelectedImage={setSelectedImage}
               />
-              <Tablet_B
-                img={item[1]}
-                setModalIsOpen={setModalIsOpen}
-                setSelectedImage={setSelectedImage}
-              />
+              {item[1] && (
+                <Tablet_B
+                  img={item[1]}
+                  setModalIsOpen={setModalIsOpen}
+                  setSelectedImage={setSelectedImage}
+                />
+              )}
             </div>
           ))}
         </div>
 
         {/* Mobile */}
-        <div className="w-full sm:hidden flex flex-col items-center justify-center overflow-x-clip">
+        <div className="-mb-[20vw] flex w-full flex-col items-center justify-center overflow-x-clip sm:hidden">
           {imgArrayMobile.map((item: any, index: number) => (
-            <div className="w-full flex justify-center flex-wrap" key={index}>
+            <div className="flex w-full flex-wrap justify-center" key={index}>
               <Mobile_A
                 img={item[0]}
                 setModalIsOpen={setModalIsOpen}
                 setSelectedImage={setSelectedImage}
               />
-              <Mobile_B
-                img={item[1]}
-                setModalIsOpen={setModalIsOpen}
-                setSelectedImage={setSelectedImage}
-              />
+              {item[1] && (
+                <Mobile_B
+                  img={item[1]}
+                  setModalIsOpen={setModalIsOpen}
+                  setSelectedImage={setSelectedImage}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -112,6 +129,8 @@ export default function Dokumentasi() {
       {modalIsOpen && (
         <ImageModal image={selectedImage} setModalIsOpen={setModalIsOpen} />
       )}
+
+      <Footer />
     </>
   );
 }
