@@ -9,16 +9,77 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function DesignGuidelinePage() {
+export default function FAQ() {
   useEffect(() => {
     AOS.init();
   }, []);
 
+  const [userInput, setUserInput] = useState("");
+  const [foundPertanyaanUmum, setFoundPertanyaanUmum] =
+    useState(listPertanyaanUmum);
+  const [foundPertanyaanMateri, setFoundPertanyaanMateri] =
+    useState(listPertanyaanMateri);
+
+  const checkSearchResult = (input: string) => {
+    let questionUmum: any[] = [];
+    let questionMateri: any[] = [];
+    listPertanyaanUmum.forEach((item) => {
+      let _question = item.question.toUpperCase();
+      if (_question.includes(input.toUpperCase())) {
+        questionUmum.push(item);
+      }
+    });
+    listPertanyaanMateri.forEach((item) => {
+      let _question = item.question.toUpperCase();
+      if (_question.includes(input.toUpperCase())) {
+        questionMateri.push(item);
+      }
+    });
+    setFoundPertanyaanUmum(questionUmum);
+    setFoundPertanyaanMateri(questionMateri);
+  };
+
+  const handleChange = (e: any) => {
+    setUserInput(e.target.value);
+    checkSearchResult(e.target.value);
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (userInput === "") {
+      setFoundPertanyaanUmum(listPertanyaanUmum);
+      setFoundPertanyaanMateri(listPertanyaanMateri);
+    } else {
+      checkSearchResult(userInput);
+    }
+  };
+
   return (
-    <main className="bg-pattern-krem-kesat bg-[size:25%] bg-repeat pb-[50vw] sm:pb-[0vw] sm:pt-[8vw] lg:pb-[0vw] lg:pt-[0vw]">
-      <FAQ_Desktop className="hidden lg:block" />
-      <FAQ_Tablet className="hidden sm:block lg:hidden" />
-      <FAQ_Mobile className="block sm:hidden" />
+    <main className="bg-pattern-krem-kesat bg-[size:40%] bg-repeat pb-[50vw] sm:bg-[size:30%] sm:pb-[0vw] sm:pt-[8vw] lg:bg-[size:15%] lg:pb-[0vw] lg:pt-[0vw]">
+      <FAQ_Desktop
+        className="hidden lg:block"
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        userInput={userInput}
+        foundPertanyaanUmum={foundPertanyaanUmum}
+        foundPertanyaanMateri={foundPertanyaanMateri}
+      />
+      <FAQ_Tablet
+        className="hidden sm:block lg:hidden"
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        userInput={userInput}
+        foundPertanyaanUmum={foundPertanyaanUmum}
+        foundPertanyaanMateri={foundPertanyaanMateri}
+      />
+      <FAQ_Mobile
+        className="block sm:hidden"
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        userInput={userInput}
+        foundPertanyaanUmum={foundPertanyaanUmum}
+        foundPertanyaanMateri={foundPertanyaanMateri}
+      />
 
       {/* Footer Manual Mobile */}
       <div className={"fixed bottom-0 z-20 w-full sm:hidden"}>
@@ -59,15 +120,15 @@ const ItemPertanyaan = ({
 
   return (
     <div
-      className={`ml-[4vw] mr-[4vw] flex w-[88vw] cursor-pointer flex-col items-start rounded-[1.5vw] bg-gradient-to-r from-[#B22635] to-[#EA5571] duration-200 sm:ml-0 sm:mr-0 sm:w-[90vw] lg:ml-0 lg:mr-0 lg:w-[80vw] ${
+      className={`ml-[4vw] mr-[4vw] flex w-[88vw] cursor-pointer flex-col items-start rounded-[1.5vw] bg-gradient-to-r from-[#B22635] to-[#EA5571] duration-500 sm:ml-0 sm:mr-0 sm:w-[80vw] lg:ml-0 lg:mr-0 lg:w-[80vw] ${
         isOpen
-          ? "h-[32vw] sm:h-[18vw] lg:h-[7.5vw]"
-          : "h-[16vw] sm:h-[9vw] lg:h-[3vw]"
+          ? "max-h-screen sm:max-h-screen lg:max-h-screen"
+          : "max-h-[16vw] sm:max-h-[6vw] lg:max-h-[3vw]"
       }`}
       onClick={handleClick}
     >
-      <div className="flex h-[16vw] w-full items-center justify-between rounded-[1.5vw] bg-gradient-to-b from-[#FFA514] to-[#FFD23F] pr-[1.5vw] sm:h-[9vw] lg:h-[3vw]">
-        <p className="px-[2vw] font-publica-sans text-[3.5vw] font-medium text-[#5E1675] sm:text-[3vw] lg:text-[1.4vw]">
+      <div className="flex h-[16vw] w-full shrink-0 items-center justify-between rounded-[1.5vw] bg-gradient-to-b from-[#FFA514] to-[#FFD23F] pr-[1.5vw] sm:h-[6vw] sm:w-[80vw] lg:h-[3vw]">
+        <p className="px-[2vw] font-publica-sans text-[3.5vw] font-medium text-[#5E1675] sm:text-[2vw] lg:text-[1.4vw]">
           {question}
         </p>
         <div
@@ -82,10 +143,14 @@ const ItemPertanyaan = ({
         </div>
       </div>
       <div
-        className={`lg:"ml-4" h-[6vw] w-full items-start sm:h-[3vw] sm:items-start lg:h-[3vw] lg:items-start ${isOpen ? "flex" : "hidden"}`}
+        className={`flex w-full items-start overflow-hidden`}
+        // w-full ${isOpen ? "flex" : "hidden"} items-start py-[2vw] sm:py-[1.5vw] lg:py-[1vw] (Versi Baru)
+        // lg:"ml-4" h-[6vw] w-full items-start sm:h-[3vw] sm:items-start lg:h-[3vw] lg:items-start ${isOpen ? "flex" : "hidden"} (Versi Lama)
       >
         <p
-          className={`px-[2vw] font-publica-sans text-[3.5vw] font-medium gradient-text-yellow-up-down sm:text-[3vw] lg:text-[1.4vw] ${isOpen ? "block" : "hidden"}`}
+          className={`px-[2vw] py-[2vw] font-publica-sans text-[3.5vw] font-medium gradient-text-yellow-up-down sm:py-[1.5vw] sm:text-[2vw] lg:py-[1vw] lg:text-[1.4vw]`}
+          // px-[2vw] font-publica-sans text-[3.5vw] font-medium gradient-text-yellow-up-down sm:text-[3vw] lg:text-[1.4vw] (Versi Baru)
+          // px-[2vw] font-publica-sans text-[3.5vw] font-medium gradient-text-yellow-up-down sm:text-[3vw] lg:text-[1.4vw] ${isOpen ? "block" : "hidden"} (Versi Lama)
         >
           {answer}
         </p>
@@ -94,49 +159,21 @@ const ItemPertanyaan = ({
   );
 };
 
-function FAQ_Desktop({ className }: { className?: string }) {
-  const [userInput, setUserInput] = useState("");
-  const [foundPertanyaanUmum, setFoundPertanyaanUmum] =
-    useState(listPertanyaanUmum);
-  const [foundPertanyaanMateri, setFoundPertanyaanMateri] =
-    useState(listPertanyaanMateri);
-
-  const checkSearchResult = () => {
-    let questionUmum: any[] = [];
-    let questionMateri: any[] = [];
-    listPertanyaanUmum.forEach((item) => {
-      let _question = item.question.toUpperCase();
-      if (_question.includes(userInput.toUpperCase())) {
-        questionUmum.push(item);
-      }
-    });
-    listPertanyaanMateri.forEach((item) => {
-      let _question = item.question.toUpperCase();
-      if (_question.includes(userInput.toUpperCase())) {
-        questionMateri.push(item);
-      }
-    });
-    setFoundPertanyaanUmum(questionUmum);
-    setFoundPertanyaanMateri(questionMateri);
-  };
-
-  const handleChange = (e: any) => {
-    setUserInput(e.target.value);
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    if (userInput === "") {
-      setFoundPertanyaanUmum(listPertanyaanUmum);
-      setFoundPertanyaanMateri(listPertanyaanMateri);
-    } else {
-      checkSearchResult();
-    }
-  };
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
+function FAQ_Desktop({
+  className,
+  handleSubmit,
+  handleChange,
+  userInput,
+  foundPertanyaanMateri,
+  foundPertanyaanUmum,
+}: {
+  className?: string;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  userInput: string;
+  foundPertanyaanMateri: any[];
+  foundPertanyaanUmum: any[];
+}) {
   return (
     <main
       className={`relative min-h-screen w-full flex-col bg-cover bg-top ${className} `}
@@ -146,12 +183,13 @@ function FAQ_Desktop({ className }: { className?: string }) {
         alt="none"
         width={1000}
         height={1000}
+        data-aos="fade-down"
         className="absolute z-[0] w-full"
       />
       <div className={`flex w-full flex-col items-center justify-center`}>
         <h1
           data-aos="fade-up"
-          className="z-[1] ml-[4vw] mt-[12vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[7vw] text-transparent"
+          className="z-[1] ml-[4vw] mt-[12vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[7vw] text-transparent drop-shadow-[0.4vw_0.3vw_0.1vw_rgba(0,0,0,0.5)]"
         >
           Frequently Asked Question
         </h1>
@@ -180,7 +218,7 @@ function FAQ_Desktop({ className }: { className?: string }) {
               </div>
             </button>
           </form>
-          <div className="relative mt-[1.5vw] flex flex-col items-center rounded-xl bg-[#5E1675] py-[3vw] hover:bg-[#5E1675]">
+          <div className="relative mb-[6vw] mt-[1.5vw] flex flex-col items-center rounded-xl bg-[#5E1675] py-[3vw] hover:bg-[#5E1675]">
             <p className="mt-[-1.5vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[3vw] text-transparent drop-shadow-[0_4px_5px_rgba(0,0,0,0.7)]">
               Pertanyaan Umum
             </p>
@@ -200,52 +238,22 @@ function FAQ_Desktop({ className }: { className?: string }) {
   );
 }
 
-function FAQ_Tablet({ className }: { className?: string }) {
-  const [userInput, setUserInput] = useState("");
-  const [foundPertanyaanUmum, setFoundPertanyaanUmum] =
-    useState(listPertanyaanUmum);
-  const [foundPertanyaanMateri, setFoundPertanyaanMateri] =
-    useState(listPertanyaanMateri);
-
-  const checkSearchResult = () => {
-    let questionUmum: any[] = [];
-    let questionMateri: any[] = [];
-    listPertanyaanUmum.forEach((item) => {
-      let _question = item.question.toUpperCase();
-      if (_question.includes(userInput.toUpperCase())) {
-        questionUmum.push(item);
-      }
-    });
-    listPertanyaanMateri.forEach((item) => {
-      let _question = item.question.toUpperCase();
-      if (_question.includes(userInput.toUpperCase())) {
-        questionMateri.push(item);
-      }
-    });
-    setFoundPertanyaanUmum(questionUmum);
-    setFoundPertanyaanMateri(questionMateri);
-  };
-
-  const handleChange = (e: any) => {
-    setUserInput(e.target.value);
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    if (userInput === "") {
-      setFoundPertanyaanUmum(listPertanyaanUmum);
-      setFoundPertanyaanMateri(listPertanyaanMateri);
-    } else {
-      checkSearchResult();
-    }
-  };
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
+function FAQ_Tablet({
+  className,
+  handleSubmit,
+  handleChange,
+  userInput,
+  foundPertanyaanMateri,
+  foundPertanyaanUmum,
+}: {
+  className?: string;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  userInput: string;
+  foundPertanyaanMateri: any[];
+  foundPertanyaanUmum: any[];
+}) {
   return (
-    // min-h-screen relative w-full flex-col bg-cover bg-top
-    // relative w-full h-auto flex-col bg-cover bg-top ${className}
     <main
       className={`relative min-h-screen w-full flex-col bg-cover bg-top ${className} `}
     >
@@ -254,36 +262,37 @@ function FAQ_Tablet({ className }: { className?: string }) {
         alt="none"
         width={1000}
         height={1000}
+        data-aos="fade-down"
         className="absolute z-[0] w-full"
       />
       <div className={`flex w-full flex-col items-center justify-center`}>
         <h1
           data-aos="fade-up"
-          className="z-[1] ml-[4vw] mt-[26vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[10vw] text-transparent"
+          className="z-[1] ml-[4vw] mt-[26vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[10vw] text-transparent drop-shadow-[0.4vw_0.3vw_0.1vw_rgba(0,0,0,0.5)]"
         >
           Frequently
         </h1>
         <h1
           data-aos="fade-up"
-          className="z-[1] ml-[4vw] mt-[-3vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[10vw] text-transparent"
+          className="z-[1] ml-[4vw] mt-[-5vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[10vw] text-transparent drop-shadow-[0.4vw_0.3vw_0.1vw_rgba(0,0,0,0.5)]"
         >
           Asked Question
         </h1>
 
         <div
           data-aos="fade-up"
-          className="z-[1] bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[6vw] text-transparent"
+          className="z-[1] bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[4vw] text-transparent"
         >
           Punya Pertanyaan?
           <form
-            className="flex h-[6vw] w-[94vw] items-center justify-between gap-[1vw] rounded-xl bg-[#5E1675] px-[1vw]"
+            className="flex h-[6vw] w-[90vw] items-center justify-between gap-[1vw] rounded-xl bg-[#5E1675] px-[1vw]"
             onSubmit={handleSubmit}
           >
             <div className="flex w-full items-center">
               <input
                 type="text"
                 placeholder="Cari di sini..."
-                className="ml-[2vw] w-full border-none bg-transparent font-publica-sans text-[3vw] text-[#FFB314] placeholder-[#FFB314] outline-none placeholder:text-[3vw]"
+                className="ml-[2vw] w-full border-none bg-transparent font-publica-sans text-[2vw] text-[#FFB314] placeholder-[#FFB314] outline-none placeholder:text-[2vw]"
                 value={userInput}
                 onChange={handleChange}
               />
@@ -294,7 +303,7 @@ function FAQ_Tablet({ className }: { className?: string }) {
               </div>
             </button>
           </form>
-          <div className="relative mt-[5vw] flex flex-col items-center rounded-xl bg-[#5E1675] py-[3vw] hover:bg-[#5E1675]">
+          <div className="relative mb-[6vw] mt-[5vw] flex flex-col items-center rounded-xl bg-[#5E1675] py-[3vw] hover:bg-[#5E1675]">
             <p className="mt-[-2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[5vw] text-transparent drop-shadow-[0_4px_5px_rgba(0,0,0,0.7)]">
               Pertanyaan Umum
             </p>
@@ -314,52 +323,22 @@ function FAQ_Tablet({ className }: { className?: string }) {
   );
 }
 
-function FAQ_Mobile({ className }: { className?: string }) {
-  const [userInput, setUserInput] = useState("");
-  const [foundPertanyaanUmum, setFoundPertanyaanUmum] =
-    useState(listPertanyaanUmum);
-  const [foundPertanyaanMateri, setFoundPertanyaanMateri] =
-    useState(listPertanyaanMateri);
-
-  const checkSearchResult = () => {
-    let questionUmum: any[] = [];
-    let questionMateri: any[] = [];
-    listPertanyaanUmum.forEach((item) => {
-      let _question = item.question.toUpperCase();
-      if (_question.includes(userInput.toUpperCase())) {
-        questionUmum.push(item);
-      }
-    });
-    listPertanyaanMateri.forEach((item) => {
-      let _question = item.question.toUpperCase();
-      if (_question.includes(userInput.toUpperCase())) {
-        questionMateri.push(item);
-      }
-    });
-    setFoundPertanyaanUmum(questionUmum);
-    setFoundPertanyaanMateri(questionMateri);
-  };
-
-  const handleChange = (e: any) => {
-    setUserInput(e.target.value);
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    if (userInput === "") {
-      setFoundPertanyaanUmum(listPertanyaanUmum);
-      setFoundPertanyaanMateri(listPertanyaanMateri);
-    } else {
-      checkSearchResult();
-    }
-  };
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
+function FAQ_Mobile({
+  className,
+  handleSubmit,
+  handleChange,
+  userInput,
+  foundPertanyaanMateri,
+  foundPertanyaanUmum,
+}: {
+  className?: string;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  userInput: string;
+  foundPertanyaanMateri: any[];
+  foundPertanyaanUmum: any[];
+}) {
   return (
-    // min-h-screen relative w-full flex-col bg-cover bg-top
     <main
       className={`relative min-h-screen w-full flex-col bg-cover bg-top ${className} `}
     >
@@ -367,19 +346,20 @@ function FAQ_Mobile({ className }: { className?: string }) {
         src={"/images/background/faq-background-3.png"}
         alt="none"
         width={1000}
+        data-aos="fade-down"
         height={1000}
         className="absolute z-[0] w-full"
       />
       <div className={`flex w-full flex-col items-center justify-center`}>
         <h1
           data-aos="fade-up"
-          className="z-[1] ml-[4vw] mt-[40vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[12vw] text-transparent"
+          className="z-[1] ml-[4vw] mt-[40vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[12vw] text-transparent drop-shadow-[0.4vw_0.3vw_0.1vw_rgba(0,0,0,0.5)]"
         >
           Frequently
         </h1>
         <h1
           data-aos="fade-up"
-          className="z-[1] ml-[4vw] mt-[-3vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[12vw] text-transparent"
+          className="z-[1] ml-[4vw] mt-[-6vw] self-center bg-gradient-to-b from-[#5E1675] via-[#982D66] to-[#CD4258] bg-clip-text font-legendaire text-[12vw] text-transparent drop-shadow-[0.4vw_0.3vw_0.1vw_rgba(0,0,0,0.5)]"
         >
           Asked Question
         </h1>
@@ -390,25 +370,25 @@ function FAQ_Mobile({ className }: { className?: string }) {
         >
           Punya Pertanyaan?
           <form
-            className="flex h-[8vw] w-[96vw] items-center justify-between gap-[1vw] rounded-xl bg-[#5E1675] px-[1vw]"
+            className="flex h-[10vw] w-[96vw] items-center justify-between gap-[1vw] rounded-xl bg-[#5E1675] px-[1vw]"
             onSubmit={handleSubmit}
           >
             <div className="flex w-full items-center">
               <input
                 type="text"
                 placeholder="Cari di sini..."
-                className="ml-[2vw] w-full border-none bg-transparent font-publica-sans text-[3vw] text-[#FFB314] placeholder-[#FFB314] outline-none placeholder:text-[3vw]"
+                className="ml-[2vw] w-full border-none bg-transparent font-publica-sans text-[3.5vw] text-[#FFB314] placeholder-[#FFB314] outline-none placeholder:text-[3.5vw]"
                 value={userInput}
                 onChange={handleChange}
               />
             </div>
-            <button className="mr-[2vw] h-[5vw] w-[10vw] items-end rounded-[1vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] hover:from-[#FFA514] hover:to-[#FFD23F]">
-              <div className="bg-gradient-to-b from-[#491772] to-[#5E1675] bg-clip-text font-legendaire text-[3vw] text-transparent">
+            <button className="mr-[2vw] h-[6vw] w-[12vw] items-end rounded-[1vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] hover:from-[#FFA514] hover:to-[#FFD23F]">
+              <div className="bg-gradient-to-b from-[#491772] to-[#5E1675] bg-clip-text font-legendaire text-[3.5vw] text-transparent">
                 Search
               </div>
             </button>
           </form>
-          <div className="relative mt-[5vw] flex flex-col items-center rounded-xl bg-[#5E1675] py-[6vw] hover:bg-[#5E1675]">
+          <div className="relative mb-[6vw] mt-[5vw] flex flex-col items-center rounded-xl bg-[#5E1675] py-[6vw] hover:bg-[#5E1675]">
             <p className="mt-[-5vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[8vw] text-transparent drop-shadow-[0_4px_5px_rgba(0,0,0,0.7)]">
               Pertanyaan Umum
             </p>

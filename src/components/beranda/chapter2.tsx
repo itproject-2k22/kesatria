@@ -11,31 +11,31 @@ const CARDCONTENT = [
     title: "Lika-Liku Kesatria",
     desc: "Perkuliahan adalah jenjang lebih tinggi yang diambil oleh seseorang setelah menyelesaikan pendidikan menengah atas (SMA/SMK) atau sederajat. Sebelum memasuki dunia perkuliahan, sebaiknya kesatria muda harus mengenal terlebih dahulu seputar perkuliahan sehingga nantinya dapat mempersiapkan diri untuk menyesuaikan diri dengan lingkungan yang baru.",
     link: "/",
-    imgpath: "/vercel.svg",
+    imgpath: "/images/chapter 2/lika-liku.jpg",
   },
   {
     title: "Pengenalan Jurusan",
     desc: "Fakultas Teknik terdiri dari 8 Departemen yang di dalamnya terdapat 15 Program Studi atau yang biasa dikenal dengan jurusan. Sebelum masuk ke jurusan masing-masing, yuk kita sama-sama kenali jurusan Kesatria Muda melalui modul berikut!",
     link: "/",
-    imgpath: "/next.svg",
+    imgpath: "/images/chapter 2/pengenalan.jpg",
   },
   {
     title: "Jelajah Lembaga",
     desc: "Fakultas Teknik tidak hanya bergerak dan berprestasi di bidang akademik saja, namun terdapat berbagai macam lembaga yang dapat menunjang skill mahasiswanya. Wah, lembaga mana nih yang diminati Kesatria Muda? Mari pahami modul berikut sebagai bekal bagi Kesatria Muda!",
     link: "/",
-    imgpath: "/next.svg",
+    imgpath: "/images/chapter 2/jelajah.jpg",
   },
   {
     title: "Pameran Karya",
     desc: "Fakultas Teknik tidak terlepas dari segudang prestasinya. Penasaran siapa saja tim-tim yang bergerak di belakang untuk mengharumkan nama Fakultas Teknik? Yuk, simak modul berikut ini!",
     link: "/",
-    imgpath: "/next.svg",
+    imgpath: "/images/chapter 2/pameran.jpg",
   },
   {
     title: "Fasilitas Teknik",
     desc: "Fakultas Teknik sebagai fakultas terbesar di Universitas Gadjah Mada memiliki beragam fasilitas yang menunjang kegiatan mahasiswanya. Mau tahu apa saja fasilitas yang ada di Fakultas Teknik? Mari simak modul berikut!",
     link: "/",
-    imgpath: "/next.svg",
+    imgpath: "/images/chapter 2/teknik.jpg",
   },
 ];
 
@@ -50,12 +50,12 @@ const Chapter2_Desktop = () => {
             className="absolute h-full w-full rounded-[2vw]"
             alt=""
             src={imgpath}
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
           ></Image>
-          <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
-            {/* Opacity */}
-          </div>
+          {/* <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
+            opacity
+          </div> */}
           <div className="absolute -right-[7vw] -top-[8vw] w-full">
             <Image
               src="/images/beranda/pita-box-ungu-1.png"
@@ -103,7 +103,7 @@ const Chapter2_Desktop = () => {
       <h1 className="custom-shadow-text bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[4vw]/[4vw] text-transparent">
         Bagian II: Lika-Liku Kesatria
       </h1>
-      <p className="w-[80vw] px-[6vw] text-justify font-publica-sans text-[1.5vw]/[2vw] text-[#FFE5C7]">
+      <p className="w-[80vw] px-[6vw] text-justify font-publica-sans text-[1.5vw]/[2vw] text-[#FFE5C7] font-light drop-shadow-[-20_0.4vw_0.2vw_rgba(0,0,0,0.6)]">
         Masa perkuliahan tentunya berbeda jika dibandingkan dengan masa saat
         sekolah. Di mana saat sekolah, segala sesuatunya teratur dan memiliki
         jadwal yang pasti. Selain itu, lingkup pergaulan yang akan ditemui di
@@ -240,7 +240,7 @@ const Chapter2_Tablet = () => {
 
   const Descrtiption = () => {
     return (
-      <p className="custom-shadow-text w-[70vw] text-justify font-publica-sans text-[2.5vw]/[3.2vw] text-[#FFE5C7]">
+      <p className="custom-shadow-text w-[70vw] text-justify font-publica-sans text-[2.5vw]/[3.2vw] text-[#FFE5C7] font-light drop-shadow-[-10_4px_5px_rgba(0,0,0,0.7)]">
         Masa perkuliahan tentunya berbeda jika dibandingkan dengan masa saat
         sekolah. Di mana saat sekolah, segala sesuatunya teratur dan memiliki
         jadwal yang pasti. Selain itu, lingkup pergaulan yang akan ditemui di
@@ -256,16 +256,18 @@ const Chapter2_Tablet = () => {
   const SwiperCard = ({ title, desc, imgpath, link }: any) => {
     const Gambar = () => {
       return (
-        <div className="relative h-[13.5vw] w-[20vw] rounded-[2vw] bg-cover">
+        <div className="relative h-[13.5vw] w-[20vw] rounded-[2vw] bg-cover bg-gradient-to-b from-[#FFD23F] to-[#FFA514] flex items-center justify-center">
+          <div className="absolute h-full w-full rounded-[2vw] overflow-hidden">
           <Image
-            className="absolute h-full w-full rounded-[2vw]"
+            className="h-full"
             alt=""
             src={imgpath}
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
           />
+          </div>
           <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
-            {/* Opacity */}
+            
           </div>
           <div className="absolute -right-[7vw] -top-[8vw] w-full">
             <Image
@@ -317,7 +319,7 @@ const Chapter2_Tablet = () => {
           height={549}
         />
         <div className="z-[1] flex h-[55vw] w-[65vw] flex-col place-content-center items-center gap-[2vw] rounded-[2vw] bg-[#FFE5C7] drop-shadow-[0_0.5vw_1vw_#000000]">
-          <h1 className="bg-gradient-to-r from-[#5E1675] to-[#B22635] bg-clip-text font-legendaire text-[5vw] text-transparent">
+          <h1 className="bg-gradient-to-r from-[#5E1675] to-[#B22635] bg-clip-text font-legendaire text-[5vw] text-transparent ">
             {title}
           </h1>
           <div className="flex items-center justify-center gap-[6vw]">
@@ -386,6 +388,7 @@ const Chapter2_Tablet = () => {
           onSlideChange={(swiper) => {
             setActiveSwiper(swiper.activeIndex);
           }}
+          loop={true}
         >
           {CARDCONTENT.map((item, index) => (
             <SwiperSlide key={index}>
@@ -417,7 +420,7 @@ const Chapter2_HP = () => {
 
   const Descrtiption = () => {
     return (
-      <p className="w-[70vw] text-justify font-publica-sans text-[3.5vw]/[4.5vw] text-[#FFE5C7]">
+      <p className="w-[70vw] text-justify font-publica-sans text-[3.5vw]/[4.5vw] text-[#FFE5C7] font-light pt-[3vw] drop-shadow-[-10_4px_5px_rgba(0,0,0,0.7)]">
         Masa perkuliahan tentunya berbeda jika dibandingkan dengan masa saat
         sekolah. Di mana saat sekolah, segala sesuatunya teratur dan memiliki
         jadwal yang pasti. Selain itu, lingkup pergaulan yang akan ditemui di
@@ -433,16 +436,18 @@ const Chapter2_HP = () => {
   const SwiperCard = ({ title, desc, imgpath, link }: any) => {
     const Gambar = () => {
       return (
-        <div className="relative h-[13.5vw] w-[20vw] rounded-[2vw] bg-cover">
+        <div className="relative h-[13.5vw] w-[20vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] rounded-[2vw] bg-cover flex justify-center items-center">
+          <div className="absolute h-full w-full rounded-[2vw] overflow-hidden">
           <Image
-            className="absolute h-full w-full rounded-[2vw]"
+            className="h-full"
             alt=""
             src={imgpath}
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
           />
+          </div>
           <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
-            {/* Opacity */}
+            {/* // opacity */}
           </div>
           <div className="absolute -right-[7vw] -top-[8vw] w-full">
             <Image
@@ -453,7 +458,7 @@ const Chapter2_HP = () => {
               className="w-full scale-[0.5]"
             />
           </div>
-          <div className="absolute -bottom-[5.9vw] -left-[7.9vw] w-full">
+          <div className="absolute -bottom-[5.95vw] -left-[7.9vw] w-full">
             <Image
               src="/images/beranda/pita-box-ungu-2.png"
               alt=""
@@ -567,6 +572,7 @@ const Chapter2_HP = () => {
           onSlideChange={(swiper) => {
             setActiveSwiper(swiper.activeIndex);
           }}
+          loop={true}
         >
           {CARDCONTENT.map((item, index) => (
             <SwiperSlide key={index}>
