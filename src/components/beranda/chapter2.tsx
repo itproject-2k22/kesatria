@@ -10,31 +10,31 @@ const CARDCONTENT = [
   {
     title: "Lika-Liku Kesatria",
     desc: "Perkuliahan adalah jenjang lebih tinggi yang diambil oleh seseorang setelah menyelesaikan pendidikan menengah atas (SMA/SMK) atau sederajat. Sebelum memasuki dunia perkuliahan, sebaiknya kesatria muda harus mengenal terlebih dahulu seputar perkuliahan sehingga nantinya dapat mempersiapkan diri untuk menyesuaikan diri dengan lingkungan yang baru.",
-    link: "/",
+    link: "/1w6AQyjaFXOSQpm_ZQe3RHZkU_80uNUHb",
     imgpath: "/images/chapter 2/lika-liku.jpg",
   },
   {
     title: "Pengenalan Jurusan",
     desc: "Fakultas Teknik terdiri dari 8 Departemen yang di dalamnya terdapat 15 Program Studi atau yang biasa dikenal dengan jurusan. Sebelum masuk ke jurusan masing-masing, yuk kita sama-sama kenali jurusan Kesatria Muda melalui modul berikut!",
-    link: "/",
+    link: "/prodi",
     imgpath: "/images/chapter 2/pengenalan.jpg",
   },
   {
     title: "Jelajah Lembaga",
     desc: "Fakultas Teknik tidak hanya bergerak dan berprestasi di bidang akademik saja, namun terdapat berbagai macam lembaga yang dapat menunjang skill mahasiswanya. Wah, lembaga mana nih yang diminati Kesatria Muda? Mari pahami modul berikut sebagai bekal bagi Kesatria Muda!",
-    link: "/",
+    link: "/1pJurt6XIllXkBgFsEF9nl2AI0S_IS0Pq",
     imgpath: "/images/chapter 2/jelajah.jpg",
   },
   {
     title: "Pameran Karya",
     desc: "Fakultas Teknik tidak terlepas dari segudang prestasinya. Penasaran siapa saja tim-tim yang bergerak di belakang untuk mengharumkan nama Fakultas Teknik? Yuk, simak modul berikut ini!",
-    link: "/",
+    link: "/1CZpujWAl0SC1GWpOGn-k_acMeL2W0X1U",
     imgpath: "/images/chapter 2/pameran.jpg",
   },
   {
     title: "Fasilitas Teknik",
     desc: "Fakultas Teknik sebagai fakultas terbesar di Universitas Gadjah Mada memiliki beragam fasilitas yang menunjang kegiatan mahasiswanya. Mau tahu apa saja fasilitas yang ada di Fakultas Teknik? Mari simak modul berikut!",
-    link: "/",
+    link: "/1eFLENcwhriBPk6uqChqVCeZtCfWK-wOW",
     imgpath: "/images/chapter 2/teknik.jpg",
   },
 ];
@@ -75,7 +75,7 @@ const Chapter2_Desktop = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-[0.5vw] h-[22vw] place-content-center">
+        <div className="flex h-[22vw] flex-col place-content-center gap-[0.5vw]">
           <h2 className="bg-gradient-to-r from-[#5E1675] to-[#B22635] bg-clip-text font-legendaire text-[3vw] text-transparent">
             {title}
           </h2>
@@ -83,7 +83,7 @@ const Chapter2_Desktop = () => {
             {desc}
           </p>
           <Link
-            href={"/materi"}
+            href={"/materi/" + link}
             className="w-fit rounded-[1.5vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] px-[2.5vw] duration-100 hover:from-[#FFA514] hover:to-[#FFD23F]"
           >
             <p className="font-legendaire text-[1.5vw] text-[#5E1675]">
@@ -103,7 +103,7 @@ const Chapter2_Desktop = () => {
       <h1 className="custom-shadow-text bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[4vw]/[4vw] text-transparent">
         Bagian II: Lika-Liku Kesatria
       </h1>
-      <p className="w-[80vw] px-[6vw] text-justify font-publica-sans text-[1.5vw]/[2vw] text-[#FFE5C7] font-light drop-shadow-[-20_0.4vw_0.2vw_rgba(0,0,0,0.6)]">
+      <p className="w-[80vw] px-[6vw] text-justify font-publica-sans text-[1.5vw]/[2vw] font-light text-[#FFE5C7] drop-shadow-[-20_0.4vw_0.2vw_rgba(0,0,0,0.6)]">
         Masa perkuliahan tentunya berbeda jika dibandingkan dengan masa saat
         sekolah. Di mana saat sekolah, segala sesuatunya teratur dan memiliki
         jadwal yang pasti. Selain itu, lingkup pergaulan yang akan ditemui di
@@ -140,7 +140,7 @@ const Chapter2_Desktop = () => {
               }}
             >
               <Image
-                className="absolute w-[3vw] h-[8vw] duration-100 hover:w-[5vw] hover:translate-x-[-1vw]"
+                className="absolute h-[8vw] w-[3vw] cursor-pointer duration-100 hover:w-[5vw] hover:translate-x-[-1vw]"
                 alt=""
                 src={"/images/assets_beranda_chapter2_arrow_kiri.svg"}
                 width={52.7}
@@ -176,7 +176,7 @@ const Chapter2_Desktop = () => {
               }}
             >
               <Image
-                className="absolute w-[3vw] h-[8vw] duration-100 hover:w-[5vw] hover:translate-x-[1vw]"
+                className="absolute h-[8vw] w-[3vw] cursor-pointer duration-100 hover:w-[5vw] hover:translate-x-[1vw]"
                 alt=""
                 src={"/images/assets_beranda_chapter2_arrow_kanan.svg"}
                 width={52.7}
@@ -188,7 +188,7 @@ const Chapter2_Desktop = () => {
             {CARDCONTENT.map((item, index) => (
               <div
                 className={
-                  "z-[1] flex w-full cursor-pointer flex-col items-center rounded-b-[1.5vw] bg-gradient-to-b drop-shadow-[0_0.5vw_1vw_#000000] duration-100 transition " +
+                  "z-[1] flex w-full cursor-pointer flex-col items-center rounded-b-[1.5vw] bg-gradient-to-b drop-shadow-[0_0.5vw_1vw_#000000] transition duration-100 " +
                   (activeSwiper == index
                     ? "from-[#FFD23F] to-[#FFA514]"
                     : "from-[#491772] to-[#5E1675]")
@@ -240,7 +240,7 @@ const Chapter2_Tablet = () => {
 
   const Descrtiption = () => {
     return (
-      <p className="custom-shadow-text w-[70vw] text-justify font-publica-sans text-[2.5vw]/[3.2vw] text-[#FFE5C7] font-light drop-shadow-[-10_4px_5px_rgba(0,0,0,0.7)]">
+      <p className="custom-shadow-text w-[70vw] text-justify font-publica-sans text-[2.5vw]/[3.2vw] font-light text-[#FFE5C7] drop-shadow-[-10_4px_5px_rgba(0,0,0,0.7)]">
         Masa perkuliahan tentunya berbeda jika dibandingkan dengan masa saat
         sekolah. Di mana saat sekolah, segala sesuatunya teratur dan memiliki
         jadwal yang pasti. Selain itu, lingkup pergaulan yang akan ditemui di
@@ -256,19 +256,19 @@ const Chapter2_Tablet = () => {
   const SwiperCard = ({ title, desc, imgpath, link }: any) => {
     const Gambar = () => {
       return (
-        <div className="relative h-[13.5vw] w-[20vw] rounded-[2vw] bg-cover bg-gradient-to-b from-[#FFD23F] to-[#FFA514] flex items-center justify-center">
-          <div className="absolute h-full w-full rounded-[2vw] overflow-hidden">
-          <Image
-            className="h-full"
-            alt=""
-            src={imgpath}
-            width={1000}
-            height={1000}
-          />
+        <div className="relative flex h-[13.5vw] w-[20vw] items-center justify-center rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-cover">
+          <div className="absolute h-full w-full overflow-hidden rounded-[2vw]">
+            <Image
+              className="h-full"
+              alt=""
+              src={imgpath}
+              width={1000}
+              height={1000}
+            />
           </div>
-          <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
+          {/* <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
             
-          </div>
+          </div> */}
           <div className="absolute -right-[7vw] -top-[8vw] w-full">
             <Image
               src="/images/beranda/pita-box-ungu-1.png"
@@ -293,7 +293,7 @@ const Chapter2_Tablet = () => {
     const Button = () => {
       return (
         <Link
-          href={"/materi"}
+          href={"/materi/" + link}
           className="w-fit rounded-[4.5vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] px-[5vw] duration-100 hover:from-[#FFA514] hover:to-[#FFD23F]"
         >
           <p className="font-legendaire text-[3vw] text-[#5E1675]">
@@ -319,7 +319,7 @@ const Chapter2_Tablet = () => {
           height={549}
         />
         <div className="z-[1] flex h-[55vw] w-[65vw] flex-col place-content-center items-center gap-[2vw] rounded-[2vw] bg-[#FFE5C7] drop-shadow-[0_0.5vw_1vw_#000000]">
-          <h1 className="bg-gradient-to-r from-[#5E1675] to-[#B22635] bg-clip-text font-legendaire text-[5vw] text-transparent ">
+          <h1 className="bg-gradient-to-r from-[#5E1675] to-[#B22635] bg-clip-text font-legendaire text-[5vw] text-transparent">
             {title}
           </h1>
           <div className="flex items-center justify-center gap-[6vw]">
@@ -362,7 +362,7 @@ const Chapter2_Tablet = () => {
         </div>
         <div className="z-[0] flex">
           <div className="h-[6vw] w-[15vw] rounded-b-[3vw] bg-gradient-to-br from-[#491772] to-[#5E1675] drop-shadow-[0_1vw_1vw_#000000]" />
-          <div className="z-[1] flex h-[6vw] w-[25vw] items-center justify-center rounded-b-[3vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] drop-shadow-[0_1vw_1vw_#000000] hover:bg-gradient-to-t">
+          <div className="z-[1] flex h-[6vw] w-[25vw] items-center justify-center rounded-b-[3vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] drop-shadow-[0_1vw_1vw_#000000]">
             <button className="bg-gradient-to-b from-[#491772] to-[#5E1675] bg-clip-text text-center font-legendaire text-[3vw] text-transparent">
               {title}
             </button>
@@ -420,7 +420,7 @@ const Chapter2_HP = () => {
 
   const Descrtiption = () => {
     return (
-      <p className="w-[70vw] text-justify font-publica-sans text-[3.5vw]/[4.5vw] text-[#FFE5C7] font-light pt-[3vw] drop-shadow-[-10_4px_5px_rgba(0,0,0,0.7)]">
+      <p className="w-[70vw] pt-[3vw] text-justify font-publica-sans text-[3.5vw]/[4.5vw] font-light text-[#FFE5C7] drop-shadow-[-10_4px_5px_rgba(0,0,0,0.7)]">
         Masa perkuliahan tentunya berbeda jika dibandingkan dengan masa saat
         sekolah. Di mana saat sekolah, segala sesuatunya teratur dan memiliki
         jadwal yang pasti. Selain itu, lingkup pergaulan yang akan ditemui di
@@ -436,19 +436,19 @@ const Chapter2_HP = () => {
   const SwiperCard = ({ title, desc, imgpath, link }: any) => {
     const Gambar = () => {
       return (
-        <div className="relative h-[13.5vw] w-[20vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] rounded-[2vw] bg-cover flex justify-center items-center">
-          <div className="absolute h-full w-full rounded-[2vw] overflow-hidden">
-          <Image
-            className="h-full"
-            alt=""
-            src={imgpath}
-            width={1000}
-            height={1000}
-          />
+        <div className="relative flex h-[13.5vw] w-[20vw] items-center justify-center rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-cover">
+          <div className="absolute h-full w-full overflow-hidden rounded-[2vw]">
+            <Image
+              className="h-full"
+              alt=""
+              src={imgpath}
+              width={1000}
+              height={1000}
+            />
           </div>
-          <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
-            {/* // opacity */}
-          </div>
+          {/* <div className="absolute h-full w-full rounded-[2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] opacity-50">
+            opacity
+          </div> */}
           <div className="absolute -right-[7vw] -top-[8vw] w-full">
             <Image
               src="/images/beranda/pita-box-ungu-1.png"
@@ -474,7 +474,7 @@ const Chapter2_HP = () => {
     const Button = () => {
       return (
         <Link
-          href={"/materi"}
+          href={"/materi" + link}
           className="w-fit rounded-[4.5vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] px-[5vw] duration-100 hover:from-[#FFA514] hover:to-[#FFD23F]"
         >
           <p className="font-legendaire text-[3vw] text-[#5E1675]">
@@ -546,7 +546,7 @@ const Chapter2_HP = () => {
         </div>
         <div className="z-[0] flex">
           <div className="h-[6vw] w-[15vw] rounded-b-[3vw] bg-gradient-to-br from-[#491772] to-[#5E1675] drop-shadow-[0_1vw_1vw_#000000]" />
-          <div className="z-[1] flex h-[6vw] w-[25vw] items-center justify-center rounded-b-[3vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] drop-shadow-[0_1vw_1vw_#000000] hover:bg-gradient-to-t">
+          <div className="z-[1] flex h-[6vw] w-[25vw] items-center justify-center rounded-b-[3vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] drop-shadow-[0_1vw_1vw_#000000]">
             <button className="bg-gradient-to-b from-[#491772] to-[#5E1675] bg-clip-text text-center font-legendaire text-[3vw] text-transparent">
               {title}
             </button>

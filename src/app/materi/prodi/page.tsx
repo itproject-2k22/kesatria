@@ -15,13 +15,14 @@ const DEPARTEMEN = [
       {
         namaprodi: "Arsitektur",
         link: "1WE9n9aLgGgPli2c5crFcOFa73rGEkv83",
-        imgpath: "/images/covermodul/Pages from Modul Prodi Arsitektur.pdf.png",
+        imgpath:
+          "/images/covermodul2/Pages from Modul Prodi Arsitektur.pdf.png",
       },
       {
         namaprodi: "Perencanaan Wilayah Kota",
         link: "163KaAm1aVLO2lFQoCxUSSB2Oe78PvzH0",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Perencanaan Wilayah dan Kota.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Perencanaan Wilayah dan Kota.pdf.png",
       },
     ],
   },
@@ -30,21 +31,21 @@ const DEPARTEMEN = [
     prodi: [
       {
         namaprodi: "Teknik Elektro",
-        link: "WqCID-FAz3zm8PxOoot7Ial3rf9bpsPI",
+        link: "1WqCID-FAz3zm8PxOoot7Ial3rf9bpsPI",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Elektro (DONE).docx.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Elektro (DONE).docx.pdf.png",
       },
       {
         namaprodi: "Teknologi Informasi",
         link: "1FeMeOPvvplVnfXh2KP0GDtGk__3eihYX",
         imgpath:
-          "/images/covermodul/Modul Prodi Teknologi Informasi_Page_1.png",
+          "/images/covermodul2/Modul Prodi Teknologi Informasi_Page_1.png",
       },
       {
         namaprodi: "Teknik Biomedis",
         link: "1IkwwlbENfG_NcXeKZE0cGIKIle0VzveX",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Biomedis (DONE).docx.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Biomedis (DONE).docx.pdf.png",
       },
     ],
   },
@@ -55,13 +56,13 @@ const DEPARTEMEN = [
         namaprodi: "Teknik Nuklir",
         link: "1QQZEqIXEn63ad8UpKPIY2NN9wzl4Reu3",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Nuklir.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Nuklir.pdf.png",
       },
       {
         namaprodi: "Teknik Fisika",
         link: "1nJuu5tQWI2136rxl5u-UnNBafCQ2bPpK",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Fisika (DONE).docx.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Fisika (DONE).docx.pdf.png",
       },
     ],
   },
@@ -72,7 +73,7 @@ const DEPARTEMEN = [
         namaprodi: "Teknik Geodesi",
         link: "19DoXIk_GZlrTfh9LAnnFv0tMfyNoGs00",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Geodesi (DONE).docx.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Geodesi (DONE).docx.pdf.png",
       },
     ],
   },
@@ -83,7 +84,7 @@ const DEPARTEMEN = [
         namaprodi: "Teknik Geologi",
         link: "17zstl6s9gmRWGkLINwpLUaWYXLoo1RVa",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Geologi (DONE).docx.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Geologi (DONE).docx.pdf.png",
       },
     ],
   },
@@ -94,7 +95,7 @@ const DEPARTEMEN = [
         namaprodi: "Teknik Kimia",
         link: "1VHVlEHJRbQL7Wi8l8oQhuBrMEJ1REPHt",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Kimia.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Kimia.pdf.png",
       },
     ],
   },
@@ -105,13 +106,13 @@ const DEPARTEMEN = [
         namaprodi: "Teknik Mesin",
         link: "1vJ0pwnzHOZPk2XZg_kjvjezwvm0Icj7B",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Mesin.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Mesin.pdf.png",
       },
       {
         namaprodi: "Teknik Industri",
         link: "14OR3K0NBrd7tPRMc_fcM5okf9KrDWdeT",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Industri.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Industri.pdf.png",
       },
     ],
   },
@@ -122,19 +123,19 @@ const DEPARTEMEN = [
         namaprodi: "Teknik Sipil",
         link: "1ZapisYGM7MzxZsyfex-ttBnbjYsyINy_",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Sipil.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Sipil.pdf.png",
       },
       {
         namaprodi: "Teknik Infrastruktur Lingkungan",
         link: "1AA_QooNb1gkwglp-e8HAEgiGdwKMtWtd",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Infrastruktur Lingkungan.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Infrastruktur Lingkungan.pdf.png",
       },
       {
         namaprodi: "Teknik Sumber Daya Air",
         link: "1Vck7DS_OcnV93_zyrBC6MG_1RJH3hZcc",
         imgpath:
-          "/images/covermodul/Pages from Modul Prodi Teknik Sumber Daya Air.pdf.png",
+          "/images/covermodul2/Pages from Modul Prodi Teknik Sumber Daya Air.pdf.png",
       },
     ],
   },
@@ -146,9 +147,9 @@ export default function ProdiPage() {
 
   function DepartemenCardDesktop({ title, prodi }: any) {
     return (
-      <div className="flex flex-col place-content-center items-center gap-[4vw] lg:gap-0 px-[10vw] lg:py-[5vw]">
-        <div className="h-[10vw] lg:w-full lg:flex lg:items-center lg:justify-between">
-          <div className="flex min-h-[10vw] items-center justify-center w-[4vw] max-lg:hidden">
+      <div className="flex flex-col place-content-center items-center gap-[2vw] px-[10vw] sm:gap-[4vw] lg:gap-0 lg:pb-[10vw]">
+        <div className="flex h-[20vw] items-end sm:h-[10vw] lg:w-full lg:items-center lg:justify-between">
+          <div className="flex min-h-[10vw] w-[4vw] items-center justify-center max-lg:hidden">
             <button
               onClick={() => {
                 if (swiper) swiper.slidePrev();
@@ -158,7 +159,7 @@ export default function ProdiPage() {
               }}
             >
               <Image
-                className="w-[7.5vw] hover:w-[10vw] lg:w-[3vw] lg:hover:w-[4vw] duration-100"
+                className="w-[7.5vw] duration-100 hover:w-[10vw] lg:w-[3vw] lg:hover:w-[4vw]"
                 alt=""
                 src={"/images/assets_materi_arrow_kiri.svg"}
                 height={100}
@@ -168,21 +169,21 @@ export default function ProdiPage() {
           </div>
 
           {/*  */}
-          <h1 className="bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text text-center font-legendaire text-[7vw]/[7vw] text-transparent lg:text-[4vw]/[4vw]">
+          <h1 className="bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text text-center font-legendaire text-[7vw]/[7vw] text-transparent sm:text-[5vw]/[5vw] lg:text-[4vw]/[4vw]">
             {title}
           </h1>
           {/*  */}
-          <div className="flex min-h-[10vw] items-center justify-center w-[4vw] max-lg:hidden">
+          <div className="flex min-h-[10vw] w-[4vw] items-center justify-center max-lg:hidden">
             <button
               onClick={() => {
-                if (swiper) swiper.slidePrev();
+                if (swiper) swiper.slideNext();
                 setActiveSwiper((prev) =>
-                  prev === 0 ? DEPARTEMEN.length - 1 : prev - 1,
+                  prev === DEPARTEMEN.length - 1 ? 0 : prev + 1,
                 );
               }}
             >
               <Image
-                className="w-[7.5vw] hover:w-[10vw] lg:w-[3vw] lg:hover:w-[4vw] duration-100"
+                className="w-[7.5vw] duration-100 hover:w-[10vw] lg:w-[3vw] lg:hover:w-[4vw]"
                 alt=""
                 src={"/images/assets_materi_arrow_kanan.svg"}
                 height={100}
@@ -191,7 +192,7 @@ export default function ProdiPage() {
             </button>
           </div>
         </div>
-        <div className="flex h-[30vw] max-lg:h-[50vw] w-full items-center justify-center">
+        <div className="flex h-[45vw] w-[87vw] items-center justify-center gap-[2vw] sm:h-[40vw] lg:h-[20vw]">
           {prodi.map(
             (
               item: { namaprodi: string; link: string; imgpath: string },
@@ -199,10 +200,10 @@ export default function ProdiPage() {
             ) => (
               <Link
                 href={"/materi/" + item.link}
-                className="flex w-full items-center justify-center"
+                className="flex w-[26vw] items-center justify-center lg:w-[13vw]"
                 key={idx}
               >
-                <div className="h-[23vw] w-[13vw] flex-shrink-0 rounded-[1.7vw] border-[0.2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] duration-100 hover:h-[27.8vw] hover:w-[15.6vw] max-lg:w-[20vw] max-lg:h-[40vw] max-lg:hover:h-[50vw] max-lg:hover:w-[25vw]">
+                <div className="h-[35.64vw] w-[25.2vw] flex-shrink-0 rounded-[1.7vw] border-[0.2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] duration-100 hover:h-[38.61vw] hover:w-[27.3vw] lg:h-[17.82vw] lg:w-[12.6vw] lg:hover:h-[21.681vw] lg:hover:w-[15.33vw]">
                   <Image
                     className="h-full w-full rounded-[1.7vw]"
                     alt=""
@@ -221,7 +222,7 @@ export default function ProdiPage() {
 
   return (
     <main className="min-w-screen flex min-h-screen flex-col place-content-center items-center lg:pt-[3vw]">
-      <div className="w-full max-lg:py-[10vw]">
+      <div className="w-full">
         <Swiper
           slidesPerView={1}
           spaceBetween={10}
@@ -251,7 +252,7 @@ export default function ProdiPage() {
             }}
           >
             <Image
-              className="w-[7.5vw] hover:w-[10vw] lg:w-[6vw] lg:hover:w-[8vw] duration-100"
+              className="w-[7.5vw] duration-100 hover:w-[10vw] lg:w-[6vw] lg:hover:w-[8vw]"
               alt=""
               src={"/images/assets_materi_arrow_kiri.svg"}
               height={100}
@@ -269,7 +270,7 @@ export default function ProdiPage() {
             }}
           >
             <Image
-              className="w-[7.5vw] hover:w-[10vw] lg:w-[6vw] lg:hover:w-[8vw] duration-100"
+              className="w-[7.5vw] duration-100 hover:w-[10vw] lg:w-[6vw] lg:hover:w-[8vw]"
               alt=""
               src={"/images/assets_materi_arrow_kanan.svg"}
               height={1000}
@@ -278,7 +279,7 @@ export default function ProdiPage() {
           </button>
         </div>
       </div>
-      <Footer className={"mt-[5vw] z-[0] max-sm:absolute max-sm:bottom-0"}/>
+      <Footer className={"absolute bottom-0 z-[0] mt-[5vw]"} />
     </main>
   );
 }

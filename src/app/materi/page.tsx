@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Link from "next/link";
 import Footer from "@/components/layout/footer";
-import AOS from 'aos';
+import AOS from "aos";
 
 export default function MateriPage() {
   useEffect(() => {
@@ -76,7 +76,10 @@ export default function MateriPage() {
               PIONIR Kesatria 2024 dapat dibaca di sini.
             </p>
           </div>
-          <div data-aos="fade-up" className="flex w-full flex-col place-content-center items-center p-[2vw]">
+          <div
+            data-aos="fade-up"
+            className="flex w-full flex-col place-content-center items-center p-[2vw]"
+          >
             <h2 className="bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[4vw]/[5vw] text-transparent">
               {modulTitle}
             </h2>
@@ -113,7 +116,7 @@ export default function MateriPage() {
         >
           <div
             className={
-              "h-[23vw] w-[13vw] flex-shrink-0 rounded-[1.7vw] border-[0.2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] duration-100 hover:h-[27.8vw] hover:w-[15.6vw]"
+              "h-[17.82vw] w-[12.6vw] flex-shrink-0 rounded-[1.7vw] border-[0.2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] duration-100 hover:h-[21.681vw] hover:w-[15.33vw]"
             }
           >
             <Image
@@ -131,7 +134,10 @@ export default function MateriPage() {
       <div className="flex min-h-screen w-full flex-col place-content-center items-center pt-[5vw] max-lg:hidden">
         <TitleAndModul />
         <div className="flex w-[100vw] flex-col">
-          <div data-aos="fade-up" className="z-[1] flex flex-row justify-end gap-[2vw] px-[7vw]">
+          <div
+            data-aos="fade-up"
+            className="z-[1] flex flex-row justify-end gap-[2vw] px-[7vw]"
+          >
             <button
               onClick={() => {
                 if (swiper) swiper.slidePrev();
@@ -159,7 +165,7 @@ export default function MateriPage() {
               />
             </button>
           </div>
-          <div data-aos="fade-up" className="w-screen">
+          <div data-aos="fade-up" className="w-[100vw]">
             <Swiper
               slidesPerView={6}
               spaceBetween={1}
@@ -168,7 +174,7 @@ export default function MateriPage() {
             >
               {MODUL.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="flex h-[30vw] w-[30vw] items-center justify-center">
+                  <div className="flex h-[24vw] w-[15vw] items-center justify-center">
                     <SwiperCard
                       index={index}
                       desc={item.desc}
@@ -196,7 +202,7 @@ export default function MateriPage() {
         <h1 className="bg-gradient-to-b from-[#FFD23F] to-[#FFA514] bg-clip-text font-legendaire text-[15vw] text-transparent drop-shadow-[0_0.5vw_0.2vw_#000000]">
           Materi
         </h1>
-        <p className="font-publica-sans text-[2.1vw]/[2.8vw] text-[#FFE5C7]">
+        <p className="font-publica-sans text-[3vw]/[3.5vw] text-[#FFE5C7]">
           Halo Kesatria Muda! <br />
           Seluruh modul-modul berkaitan tentang <br />
           PIONIR Kesatria 2024 dapat dibaca di sini.
@@ -237,7 +243,9 @@ export default function MateriPage() {
         <div
           className={
             "flex-shrink-0 rounded-[1.7vw] border-[0.2vw] bg-gradient-to-b from-[#FFD23F] to-[#FFA514] duration-200 " +
-            (activeSwiper === index ? "h-[50vw] w-[25vw]" : "h-[40vw] w-[20vw]")
+            (activeSwiper === index
+              ? "h-[41.5vw] w-[29.5vw]"
+              : "h-[29.7vw] w-[21vw]")
           }
         >
           <Image
@@ -251,7 +259,7 @@ export default function MateriPage() {
       </Link>
     );
     return (
-      <div className="flex min-h-screen w-full flex-col place-content-center items-center lg:hidden sm:translate-y-[5vw] sm:py-[4vw]">
+      <div className="flex min-h-screen w-full flex-col place-content-center items-center sm:translate-y-[5vw] sm:py-[4vw] lg:hidden">
         <Title />
         <div className="w-screen">
           <Swiper
@@ -333,7 +341,7 @@ export default function MateriPage() {
       <Transtition />
       <MateriDesktop />
       <MateriMobile />
-      <Footer className={"z-[-1] absolute"}/>
+      <Footer className={"absolute z-[-1]"} />
     </>
   );
 }
